@@ -62,37 +62,28 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define TRIG_PIN GPIO_PIN_9
-#define TRIG_PORT GPIOA
+
 uint32_t IC_Val1 = 0;
 uint32_t IC_Val2 = 0;
 uint32_t Difference = 0;
 uint8_t Is_First_Captured = 0;
-uint8_t Distance =0;
+uint32_t Frequency = 0;
 //function dedicated to wait for 10 microseconds
 void delay (uint16_t time){
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
 	while(__HAL_TIM_GET_COUNTER(&htim1)<time);
 }
-//sending trigger signal to HC-SR04
-void HCSR04_Read (void){
-	__HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);
-	delay(40);
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);
 
 
-}
-//elaboration of output from echo
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 		if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
 		{
 			if(Is_First_Captured == 0)
 			{
-				IC_Val1= HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
+				IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
 				Is_First_Captured=1;
-				__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
+				//__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
 			}
 			else if (Is_First_Captured == 1)
 			{
@@ -106,10 +97,16 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 					Difference = (0xffff - IC_Val1) + IC_Val2;
 				}
 
-				Distance = Difference * .034/2;
+				Frequency = (uint32_t) (1000000/Difference);
 				Is_First_Captured = 0;
-				__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_RISING);
-				__HAL_TIM_DISABLE_IT(&htim1,TIM_IT_CC1);
+				HD44780_Clear();
+				HD44780_SetCursor(0,0);
+				HD44780_PrintSpecialChar(Frequency/100+48);
+				HD44780_PrintSpecialChar((Frequency%100)/10+48);
+				HD44780_PrintSpecialChar(Frequency%10+48);
+				HD44780_PrintStr("HZ");
+				//__HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_RISING);
+				//__HAL_TIM_DISABLE_IT(&htim1,TIM_IT_CC1);
 			}
 		}
 }
@@ -155,13 +152,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
   while (1)
   {
-	HCSR04_Read();
-	HD44780_Clear();
-	HD44780_SetCursor(0,0);
 
-	HAL_Delay(500);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);
+	HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -350,7 +348,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LD2_Pin|GPIO_PIN_10, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -358,12 +356,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
+  /*Configure GPIO pins : LD2_Pin PA10 */
+  GPIO_InitStruct.Pin = LD2_Pin|GPIO_PIN_10;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
