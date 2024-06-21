@@ -1,0 +1,33 @@
+!SESSION 2024-06-21 03:29:51.366 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-21 03:30:03.021
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-21 03:30:03.023
+!MESSAGE Log4j2 initialized with config file C:\Users\sytye\Desktop\STM32F446RE_workspace\Frequency-meter-based-on-STM32\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-21 03:30:06.009
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-21 03:31:42.772
+!MESSAGE Indexed 'Frequency-meter-based-on-STM32' (22 sources, 82 headers) in 4.06 sec: 5,030 declarations; 26,529 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0063%)
+!SESSION 2024-06-21 03:38:44.959 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-21 03:38:51.617
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-21 03:38:51.618
+!MESSAGE Log4j2 initialized with config file C:\Users\sytye\Desktop\STM32F446RE_workspace\Frequency-meter-based-on-STM32\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-21 03:38:57.951
+!MESSAGE Started RMI Server, listening on port 41337
