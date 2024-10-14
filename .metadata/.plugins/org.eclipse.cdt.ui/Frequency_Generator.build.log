@@ -1,0 +1,17 @@
+22:54:22 **** Incremental Build of configuration Debug for project Frequency_Generator ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Frequency_Generator.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency_Generator\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency_Generator.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency_Generator.elf
+ 
+arm-none-eabi-size  Frequency_Generator.elf 
+arm-none-eabi-objdump -h -S Frequency_Generator.elf  > "Frequency_Generator.list"
+   text	   data	    bss	    dec	    hex	filename
+   9340	     12	   1716	  11068	   2b3c	Frequency_Generator.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency_Generator.list
+ 
+
+22:54:24 Build Finished. 0 errors, 0 warnings. (took 2s.400ms)
+

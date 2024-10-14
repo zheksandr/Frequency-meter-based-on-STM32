@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "liquidcrystal_i2c.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,6 +42,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+uint16_t IC_Val1 = 0;
+uint16_t IC_Val2 = 0;
+uint32_t Frequency = 0;
 
 /* USER CODE END PV */
 
@@ -55,9 +59,10 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern TIM_HandleTypeDef htim1;
+extern DMA_HandleTypeDef hdma_tim1_ch1;
 /* USER CODE BEGIN EV */
-
+extern uint16_t Buffer[BUFFER_SIZE];
+DMA_HandleTypeDef *hdma_spec = &hdma_tim1_ch1;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -199,17 +204,39 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM1 capture compare interrupt.
+  * @brief This function handles DMA2 stream1 global interrupt.
   */
-void TIM1_CC_IRQHandler(void)
+void DMA2_Stream1_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM1_CC_IRQn 0 */
+  /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
+	  Frequency = 0;
+	  for (int i = 0; i<HALF_BUFFER_SIZE;i++ ){
+		  IC_Val1=Buffer[2*i];
+		  IC_Val2=Buffer[2*i+1];
+		  if (IC_Val2 > IC_Val1){
+			  Frequency += (uint32_t)(IC_Val2-IC_Val1);
+		  }else{
+			  Frequency += (uint32_t)((0xffff - IC_Val1) + IC_Val2);
+		  }
+	  }
+	  Frequency >>= 3;
+	  Frequency = (1000000/Frequency);
+	  HD44780_Clear();
+	  HD44780_SetCursor(0,0);
+	  HD44780_PrintSpecialChar(Frequency/100+48);
+	  HD44780_PrintSpecialChar((Frequency%100)/10+48);
+	  HD44780_PrintSpecialChar(Frequency%10+48);
+	  HD44780_PrintStr("HZ");
+	  //HAL_Delay(1);
+//	  (&hdma_tim1_ch1)->StreamBaseAddress->IFCR = DMA_FLAG_TCIF0_4 << (&hdma_tim1_ch1)->StreamIndex;
+//	  (&hdma_tim1_ch1)->Instance->NDTR = BUFFER_SIZE;
+//	  (&hdma_tim1_ch1)->Instance->CR  |= DMA_IT_TC | DMA_IT_TE | DMA_IT_DME;
+//	  __HAL_DMA_ENABLE(&hdma_tim1_ch1);
+  /* USER CODE END DMA2_Stream1_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_tim1_ch1);
+  /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
 
-  /* USER CODE END TIM1_CC_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
-  /* USER CODE BEGIN TIM1_CC_IRQn 1 */
-
-  /* USER CODE END TIM1_CC_IRQn 1 */
+  /* USER CODE END DMA2_Stream1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

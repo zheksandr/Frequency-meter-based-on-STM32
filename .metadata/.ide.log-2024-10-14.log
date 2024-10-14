@@ -1,0 +1,360 @@
+2024-10-15 00:08:41,440 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 697462624 Bytes (922746880)
+2024-10-15 00:08:43,322 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 728352184 Bytes (922746880)
+2024-10-15 00:08:44,642 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 299687272 Bytes (922746880)
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-15 00:08:44,887 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2024-10-15 00:08:44,888 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-15 00:08:44,893 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Program Files (x86)\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-15 00:08:44,896 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-10-15 00:08:44,896 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-10-15 00:08:44,954 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-10-15 00:08:44,954 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : Initvalue: null
+2024-10-15 00:08:44,955 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:08:44,955 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:08:44,955 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : Statevalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : Statevalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:08:44,956 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-10-15 00:08:44,957 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-10-15 00:08:45,113 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp_save
+2024-10-15 00:08:45,232 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp
+2024-10-15 00:08:45,276 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp_save
+2024-10-15 00:08:45,362 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp
+2024-10-15 00:08:45,507 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp_save
+2024-10-15 00:08:45,611 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp
+2024-10-15 00:08:45,620 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp_save
+2024-10-15 00:08:45,743 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp
+2024-10-15 00:08:45,822 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c_save
+2024-10-15 00:08:46,015 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c
+2024-10-15 00:08:46,035 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h_save
+2024-10-15 00:08:46,117 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h
+2024-10-15 00:08:46,169 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-15 00:08:46,287 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c
+2024-10-15 00:08:46,295 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp_save
+2024-10-15 00:08:46,358 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp
+2024-10-15 00:08:46,406 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-15 00:08:46,483 [INFO] CodeEngine:335 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-15 00:08:46,506 [WARN] IPConfigManager:3005 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2024-10-15 00:08:46,510 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-15 00:08:46,511 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-15 00:08:46,555 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h_save
+2024-10-15 00:08:46,646 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h
+2024-10-15 00:08:46,665 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c_save
+2024-10-15 00:08:46,776 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c
+2024-10-15 00:08:47,252 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 284mS.
+2024-10-15 00:08:47,255 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-15 00:08:47,330 [INFO] ConfigFileManager:1531 - The Die is : DIE421
+2024-10-15 00:08:48,296 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 1041mS.
+2024-10-15 00:08:48,298 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 2mS.
+2024-10-15 00:08:48,301 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-15 00:15:32,477 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 551885632 Bytes (1006632960)
+2024-10-15 00:15:34,202 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 582294336 Bytes (1006632960)
+2024-10-15 00:15:36,392 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 681909056 Bytes (1006632960)
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-15 00:15:36,567 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2024-10-15 00:15:36,568 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-15 00:15:36,570 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Program Files (x86)\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-15 00:15:36,573 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-10-15 00:15:36,573 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Initvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:325 - Argument : Statevalue: null
+2024-10-15 00:15:36,625 [INFO] Argument:335 - Argument : Statevalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-10-15 00:15:36,626 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-10-15 00:15:36,747 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp_save
+2024-10-15 00:15:36,838 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp
+2024-10-15 00:15:36,880 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp_save
+2024-10-15 00:15:36,949 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp
+2024-10-15 00:15:37,028 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp_save
+2024-10-15 00:15:37,100 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp
+2024-10-15 00:15:37,106 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp_save
+2024-10-15 00:15:37,176 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp
+2024-10-15 00:15:37,233 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c_save
+2024-10-15 00:15:37,326 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c
+2024-10-15 00:15:37,345 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h_save
+2024-10-15 00:15:37,419 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h
+2024-10-15 00:15:37,471 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-15 00:15:37,596 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c
+2024-10-15 00:15:37,606 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp_save
+2024-10-15 00:15:37,693 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp
+2024-10-15 00:15:37,762 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-15 00:15:37,859 [INFO] CodeEngine:335 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-15 00:15:37,881 [WARN] IPConfigManager:3005 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2024-10-15 00:15:37,884 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-15 00:15:37,884 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-15 00:15:37,928 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h_save
+2024-10-15 00:15:38,005 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h
+2024-10-15 00:15:38,024 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c_save
+2024-10-15 00:15:38,129 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c
+2024-10-15 00:15:38,601 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 298mS.
+2024-10-15 00:15:38,604 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-15 00:15:38,682 [INFO] ConfigFileManager:1531 - The Die is : DIE421
+2024-10-15 00:15:39,366 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 762mS.
+2024-10-15 00:15:39,368 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 2mS.
+2024-10-15 00:15:39,371 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-15 00:20:13,360 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 569180520 Bytes (1020264448)
+2024-10-15 00:20:14,420 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 599589216 Bytes (1020264448)
+2024-10-15 00:20:16,041 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 698578672 Bytes (1020264448)
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2024-10-15 00:20:16,246 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-15 00:20:16,249 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Program Files (x86)\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-15 00:20:16,251 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-10-15 00:20:16,251 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-10-15 00:20:16,301 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-10-15 00:20:16,301 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:20:16,301 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Initvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Statevalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Statevalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:20:16,302 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-10-15 00:20:16,303 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-10-15 00:20:16,423 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp_save
+2024-10-15 00:20:16,512 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp
+2024-10-15 00:20:16,552 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp_save
+2024-10-15 00:20:16,621 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp
+2024-10-15 00:20:16,713 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp_save
+2024-10-15 00:20:16,786 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp
+2024-10-15 00:20:16,794 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp_save
+2024-10-15 00:20:16,859 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp
+2024-10-15 00:20:16,914 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c_save
+2024-10-15 00:20:17,006 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c
+2024-10-15 00:20:17,029 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h_save
+2024-10-15 00:20:17,116 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h
+2024-10-15 00:20:17,181 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-15 00:20:17,331 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c
+2024-10-15 00:20:17,365 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp_save
+2024-10-15 00:20:17,476 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp
+2024-10-15 00:20:17,526 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-15 00:20:17,604 [INFO] CodeEngine:335 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-15 00:20:17,631 [WARN] IPConfigManager:3005 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2024-10-15 00:20:17,634 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-15 00:20:17,634 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-15 00:20:17,678 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h_save
+2024-10-15 00:20:17,755 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h
+2024-10-15 00:20:17,774 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c_save
+2024-10-15 00:20:17,876 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c
+2024-10-15 00:20:18,350 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 297mS.
+2024-10-15 00:20:18,354 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-15 00:20:18,431 [INFO] ConfigFileManager:1531 - The Die is : DIE421
+2024-10-15 00:20:19,175 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 821mS.
+2024-10-15 00:20:19,177 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 2mS.
+2024-10-15 00:20:19,179 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-15 00:35:45,562 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 547286832 Bytes (1020264448)
+2024-10-15 00:35:46,696 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 577963160 Bytes (1020264448)
+2024-10-15 00:35:48,375 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 677634536 Bytes (1020264448)
+2024-10-15 00:35:48,570 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-15 00:35:48,570 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-15 00:35:48,570 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-15 00:35:48,571 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2024-10-15 00:35:48,571 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-15 00:35:48,571 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2024-10-15 00:35:48,571 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-15 00:35:48,574 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Program Files (x86)\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-15 00:35:48,576 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-10-15 00:35:48,577 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-10-15 00:35:48,617 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : Initvalue: null
+2024-10-15 00:35:48,617 [INFO] Argument:327 - 	 sub Args: 
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_6
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:35:48,617 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2024-10-15 00:35:48,617 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : Statevalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : Statevalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-10-15 00:35:48,618 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:35:48,619 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-10-15 00:35:48,619 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:35:48,619 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-10-15 00:35:48,619 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-10-15 00:35:48,619 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-10-15 00:35:48,754 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp_save
+2024-10-15 00:35:48,875 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\license.tmp
+2024-10-15 00:35:48,925 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp_save
+2024-10-15 00:35:49,002 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\gpio.tmp
+2024-10-15 00:35:49,090 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp_save
+2024-10-15 00:35:49,162 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma.tmp
+2024-10-15 00:35:49,167 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp_save
+2024-10-15 00:35:49,235 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\dma_GV.tmp
+2024-10-15 00:35:49,286 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c_save
+2024-10-15 00:35:49,452 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_it.c
+2024-10-15 00:35:49,463 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h_save
+2024-10-15 00:35:49,568 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_it.h
+2024-10-15 00:35:49,652 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-15 00:35:49,836 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\stm32f4xx_hal_msp.c
+2024-10-15 00:35:49,848 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp_save
+2024-10-15 00:35:49,914 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\MXTmpFiles\system.tmp
+2024-10-15 00:35:49,954 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-15 00:35:50,046 [INFO] CodeEngine:335 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-15 00:35:50,069 [WARN] IPConfigManager:3005 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2024-10-15 00:35:50,073 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-15 00:35:50,074 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-15 00:35:50,117 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h_save
+2024-10-15 00:35:50,212 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Inc\main.h
+2024-10-15 00:35:50,231 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c_save
+2024-10-15 00:35:50,345 [INFO] CodeEngine:279 - Generated code: C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\Core\Src\main.c
+2024-10-15 00:35:50,835 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 319mS.
+2024-10-15 00:35:50,838 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-15 00:35:50,912 [INFO] ConfigFileManager:1531 - The Die is : DIE421
+2024-10-15 00:35:51,739 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 901mS.
+2024-10-15 00:35:51,741 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 2mS.
+2024-10-15 00:35:51,744 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.

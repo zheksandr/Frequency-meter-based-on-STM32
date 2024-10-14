@@ -60,8 +60,8 @@ all: main-build
 main-build: Frequency-meter-based-on-STM32.elf secondary-outputs
 
 # Tool invocations
-Frequency-meter-based-on-STM32.elf Frequency-meter-based-on-STM32.map: $(OBJS) $(USER_OBJS) C:\Users\sytye\Desktop\STM32F446RE_workspace\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\STM32F446RE_workspace\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Frequency-meter-based-on-STM32.elf Frequency-meter-based-on-STM32.map: $(OBJS) $(USER_OBJS) C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
