@@ -45,6 +45,8 @@
 uint16_t IC_Val1 = 0;
 uint16_t IC_Val2 = 0;
 uint32_t Frequency = 0;
+uint8_t  f_lenght = 0;
+uint32_t temp = 0;
 
 /* USER CODE END PV */
 
@@ -210,6 +212,7 @@ void DMA2_Stream1_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
 	  Frequency = 0;
+	  f_lenght  = 0;
 	  for (int i = 0; i<HALF_BUFFER_SIZE;i++ ){
 		  IC_Val1=Buffer[2*i];
 		  IC_Val2=Buffer[2*i+1];
@@ -220,22 +223,32 @@ void DMA2_Stream1_IRQHandler(void)
 		  }
 	  }
 	  Frequency >>= 3;
-	  Frequency = (1000000/Frequency);
+	  Frequency = (1000000/Frequency)+10000;
+	  temp = Frequency;
 	  HD44780_Clear();
 	  HD44780_SetCursor(0,0);
-	  HD44780_PrintSpecialChar(Frequency/100+48);
-	  HD44780_PrintSpecialChar((Frequency%100)/10+48);
-	  HD44780_PrintSpecialChar(Frequency%10+48);
+	  while (temp){
+		  temp /= 10;
+		  f_lenght++;
+	  }
+	  uint32_t send_Buff[f_lenght];
+	  for (int i = 0; i < f_lenght; i++){
+		  send_Buff[i] = Frequency % 10;
+		  Frequency /= 10;
+	  }
+	  for (int i = 0; i < f_lenght; i++){
+		  HD44780_PrintSpecialChar(send_Buff[f_lenght-1-i]+48);
+	  }
 	  HD44780_PrintStr("HZ");
 	  //HAL_Delay(1);
-//	  (&hdma_tim1_ch1)->StreamBaseAddress->IFCR = DMA_FLAG_TCIF0_4 << (&hdma_tim1_ch1)->StreamIndex;
-//	  (&hdma_tim1_ch1)->Instance->NDTR = BUFFER_SIZE;
-//	  (&hdma_tim1_ch1)->Instance->CR  |= DMA_IT_TC | DMA_IT_TE | DMA_IT_DME;
-//	  __HAL_DMA_ENABLE(&hdma_tim1_ch1);
+
   /* USER CODE END DMA2_Stream1_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_tim1_ch1);
   /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
-
+  //	  (&hdma_tim1_ch1)->StreamBaseAddress->IFCR = DMA_FLAG_TCIF0_4 << (&hdma_tim1_ch1)->StreamIndex;
+  //	  (&hdma_tim1_ch1)->Instance->NDTR = BUFFER_SIZE;
+  //	  (&hdma_tim1_ch1)->Instance->CR  |= DMA_IT_TC | DMA_IT_TE | DMA_IT_DME;
+  //	  __HAL_DMA_ENABLE(&hdma_tim1_ch1);
   /* USER CODE END DMA2_Stream1_IRQn 1 */
 }
 

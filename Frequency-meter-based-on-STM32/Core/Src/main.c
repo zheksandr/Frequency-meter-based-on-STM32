@@ -45,7 +45,7 @@ TIM_HandleTypeDef htim1;
 DMA_HandleTypeDef hdma_tim1_ch1;
 
 /* USER CODE BEGIN PV */
-
+uint32_t Buffer[BUFFER_SIZE]={0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

@@ -1183,3 +1183,155 @@ Finished building: default.size.stdout
  
 Finished building: Frequency-meter-based-on-STM32.list
  
+17:13:42 **** Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:107:60: error: 'Buffer' undeclared (first use in this function)
+  107 |   HAL_TIM_IC_Start_DMA(&htim1, TIM_CHANNEL_1, (uint32_t *) Buffer, BUFFER_SIZE);
+      |                                                            ^~~~~~
+../Core/Src/main.c:107:60: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:18:44 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1868	  18184	   4708	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+17:19:17 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1900	  18216	   4728	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+17:19:56 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1900	  18216	   4728	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+17:21:01 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1900	  18216	   4728	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+17:21:48 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1900	  18216	   4728	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+17:23:26 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16288	     28	   1900	  18216	   4728	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+22:32:55 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16464	     28	   1908	  18400	   47e0	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+22:33:54 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16468	     28	   1908	  18404	   47e4	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+22:35:00 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16468	     28	   1908	  18404	   47e4	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+22:35:58 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16472	     28	   1908	  18408	   47e8	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+22:37:24 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16472	     28	   1908	  18408	   47e8	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
+22:39:53 **** Incremental Build of configuration Debug for project Frequency-meter-based-on-STM32 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Frequency-meter-based-on-STM32.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sytye\Desktop\Frequency-meter-based-on-STM32\Frequency-meter-based-on-STM32\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Frequency-meter-based-on-STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Frequency-meter-based-on-STM32.elf
+ 
+arm-none-eabi-size  Frequency-meter-based-on-STM32.elf 
+arm-none-eabi-objdump -h -S Frequency-meter-based-on-STM32.elf  > "Frequency-meter-based-on-STM32.list"
+   text	   data	    bss	    dec	    hex	filename
+  16472	     28	   1908	  18408	   47e8	Frequency-meter-based-on-STM32.elf
+Finished building: default.size.stdout
+ 
+Finished building: Frequency-meter-based-on-STM32.list
+ 
