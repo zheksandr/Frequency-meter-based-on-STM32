@@ -1,4 +1,7 @@
 *.raw
+*.log
+.metadata/
+/Debug/
 # Prerequisites
 *.d
 

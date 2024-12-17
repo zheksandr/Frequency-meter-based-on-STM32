@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "liquidcrystal_i2c.h"
+#include "usb_lcd_communication.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,11 +43,10 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-uint16_t IC_Val1 = 0;
-uint16_t IC_Val2 = 0;
-uint32_t Frequency = 0;
-uint8_t  f_lenght = 0;
-uint32_t temp = 0;
+uint16_t IC_Val1;
+uint16_t IC_Val2;
+static uint32_t Frequency = 0;
+
 
 /* USER CODE END PV */
 
@@ -62,6 +62,7 @@ uint32_t temp = 0;
 
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_tim1_ch1;
+extern TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN EV */
 extern uint16_t Buffer[BUFFER_SIZE];
 DMA_HandleTypeDef *hdma_spec = &hdma_tim1_ch1;
@@ -78,6 +79,7 @@ void NMI_Handler(void)
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
+  HAL_RCC_NMI_IRQHandler();
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
    while (1)
   {
@@ -206,14 +208,31 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+	SendDataLCDUSB(Frequency);
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
   * @brief This function handles DMA2 stream1 global interrupt.
   */
 void DMA2_Stream1_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
 	  Frequency = 0;
-	  f_lenght  = 0;
+	  IC_Val1=0;
+	  IC_Val2=0;
+	  HAL_DMA_IRQHandler(&hdma_tim1_ch1);
 	  for (int i = 0; i<HALF_BUFFER_SIZE;i++ ){
+
 		  IC_Val1=Buffer[2*i];
 		  IC_Val2=Buffer[2*i+1];
 		  if (IC_Val2 > IC_Val1){
@@ -222,24 +241,9 @@ void DMA2_Stream1_IRQHandler(void)
 			  Frequency += (uint32_t)((0xffff - IC_Val1) + IC_Val2);
 		  }
 	  }
+	  /*Potentially add a new float variable in order to output the frequencies with fraction*/
 	  Frequency >>= 3;
-	  Frequency = (1000000/Frequency)+10000;
-	  temp = Frequency;
-	  HD44780_Clear();
-	  HD44780_SetCursor(0,0);
-	  while (temp){
-		  temp /= 10;
-		  f_lenght++;
-	  }
-	  uint32_t send_Buff[f_lenght];
-	  for (int i = 0; i < f_lenght; i++){
-		  send_Buff[i] = Frequency % 10;
-		  Frequency /= 10;
-	  }
-	  for (int i = 0; i < f_lenght; i++){
-		  HD44780_PrintSpecialChar(send_Buff[f_lenght-1-i]+48);
-	  }
-	  HD44780_PrintStr("HZ");
+	  Frequency = (1000000/Frequency);
 	  //HAL_Delay(1);
 
   /* USER CODE END DMA2_Stream1_IRQn 0 */
