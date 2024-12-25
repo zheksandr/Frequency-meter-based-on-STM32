@@ -1,7 +1,7 @@
 *.raw
 *.log
 .metadata/
-/Debug/
+Frequency-meter-based-on-STM32/Debug/
 # Prerequisites
 *.d
 
