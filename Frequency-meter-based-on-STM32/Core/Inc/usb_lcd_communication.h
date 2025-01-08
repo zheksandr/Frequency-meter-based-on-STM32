@@ -4,43 +4,71 @@
 #include "main.h"
 #include "liquidcrystal_i2c.h"
 
-uint8_t  f_lenght = 0;
-uint32_t temp = 0;
+#define ERR_MESSAGE_LENGTH   9
+#define RAW_LENGTH           16
+#define FREQ_NO_DIGIT        10000
+#define FREQ_ONE_DIGIT       1000
+#define FREQ_TWO_DIGIT       100
+#define FREQ_THREE_DIGIT     10
+
 extern UART_HandleTypeDef huart4;
-void SendDataLCDUSB(uint32_t frequency){
-	  temp = frequency;
-	  f_lenght = 0;
+void SendDataLCDUSB(uint16_t *Buffer_CCR, uint16_t *Buffer_RCR, uint8_t Flag){
+	uint16_t  f_lenght    = 0;
+	float frequency       = 0;
+	char send_buff[RAW_LENGTH]  ={'0'};
+	if(Flag){
+		uint32_t sum = 0;
+		for (int i = 0; i < BUFFER_SIZE-1; i++){
+			if ((Buffer_RCR[i]-Buffer_RCR[i+1])<0){
+				sum += (Buffer_RCR[i]+REPETITION_PERIOD-Buffer_RCR[i+1])*PERIOD+Buffer_CCR[i]-Buffer_CCR[i+1];
+			}else {
+				sum += (Buffer_RCR[i]-Buffer_RCR[i+1])*PERIOD+Buffer_CCR[i]-Buffer_CCR[i+1];
+			}
+		}
+		sum >>=3;
+		frequency = 180e6/(PRESCALER*sum);
+		if((uint32_t)frequency/10000){
+			uint32_t   temp = 0;
+			f_lenght = 0;
+			temp = frequency;
+			while (temp){
+				temp /= 10;
+				f_lenght++;
+		    }
+			sprintf(send_buff, "%d",(uint32_t)frequency);
+		}else if ((uint32_t)frequency/1000){
+			sprintf(send_buff, "%.1f",frequency);
+			f_lenght = 6;
+		}else if((uint32_t)frequency/100){
+			sprintf(send_buff, "%.2f",frequency);
+			f_lenght = 6;
+		}else if((uint32_t)frequency/10){
+			sprintf(send_buff, "%.3f",frequency);
+			f_lenght = 6;
+		}else{
+			sprintf(send_buff, "%.4f",frequency);
+			f_lenght = 6;
+		}
+	}else{
+		sprintf(send_buff, "%s","NOT_READY");
+		f_lenght = ERR_MESSAGE_LENGTH;
+	}
 	  HD44780_Clear();
 	  HD44780_SetCursor(0,0);
-	  while (temp){
-		  temp /= 10;
-		  f_lenght++;
-	  }
-	  if (f_lenght){
-	  uint8_t Frequency_Buff[f_lenght];
-	  unsigned char send_Buff_UART[f_lenght+5];
 	  for (int i = 0; i < f_lenght; i++){
-		  Frequency_Buff[i] = frequency % 10 + 48;
-		  frequency /= 10;
+		  HD44780_PrintSpecialChar(send_buff[i]);
 	  }
-	  uint8_t start = 0;
-	  uint8_t end = f_lenght - 1;
-	  uint8_t temp;
-	  while (start < end) {
-	      temp = Frequency_Buff[start];
-	      Frequency_Buff[start] = Frequency_Buff[end];
-	      Frequency_Buff[end] = temp;
-          start++;
-          end--;
-      }
-	  memcpy(send_Buff_UART,Frequency_Buff,f_lenght);
-      memcpy(send_Buff_UART+f_lenght,"HZ\r\n",5);
-	  for (int i = 0; i < f_lenght; i++){
-		  HD44780_PrintSpecialChar(Frequency_Buff[i]);
+	  if(Flag){
+		  HD44780_PrintStr("HZ");
+	  	  memcpy(send_buff+f_lenght,"HZ\r\n",5);
+	  	  f_lenght+=5;
+	  }else{
+		  memcpy(send_buff+f_lenght,"\r\n",3);
+		  f_lenght+=3;
 	  }
-	  HD44780_PrintStr("HZ");
-	  HAL_UART_Transmit(&huart4, send_Buff_UART,(uint16_t) (f_lenght+5), HAL_MAX_DELAY);
-	  }
+	  HAL_UART_Transmit(&huart4, send_buff,f_lenght, HAL_MAX_DELAY);
+	  Flag = 0;
+
 }
 
 #endif

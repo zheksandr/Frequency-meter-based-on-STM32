@@ -43,11 +43,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-uint16_t IC_Val1;
-uint16_t IC_Val2;
-static uint32_t Frequency = 0;
-
-
+static uint16_t Buffer_CCR1[BUFFER_SIZE]={0};
+static uint16_t Buffer_Repetition[BUFFER_SIZE]={0};
+static uint16_t Collected_Buffer_CCR1[BUFFER_SIZE]={0};
+static uint16_t Collected_Buffer_Repetition[BUFFER_SIZE]={0};
+static uint8_t index = BUFFER_SIZE;
+static uint8_t DataCollected = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,11 +62,10 @@ static uint32_t Frequency = 0;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef hdma_tim1_ch1;
+extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN EV */
-extern uint16_t Buffer[BUFFER_SIZE];
-DMA_HandleTypeDef *hdma_spec = &hdma_tim1_ch1;
+extern TIM_HandleTypeDef htim3;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -207,51 +207,45 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM1 capture compare interrupt.
+  */
+void TIM1_CC_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_CC_IRQn 0 */
+  index--;
+  Buffer_CCR1[index]= htim1.Instance->CCR1;
+  Buffer_Repetition[index] = htim3.Instance->CNT;
+  if(!index){
+	  index = BUFFER_SIZE;
+	  DataCollected = 1;
+	  for (int i = 0; i < BUFFER_SIZE; i++) {
+	      Collected_Buffer_CCR1[i] = Buffer_CCR1[i];
+	  }
+	  for (int i = 0; i < BUFFER_SIZE; i++) {
+		  Collected_Buffer_Repetition[i] = Buffer_Repetition[i];
+
+	  }
+  }
+  /* USER CODE END TIM1_CC_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim1);
+  /* USER CODE BEGIN TIM1_CC_IRQn 1 */
+
+  /* USER CODE END TIM1_CC_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM2 global interrupt.
   */
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-	SendDataLCDUSB(Frequency);
+	SendDataLCDUSB(Collected_Buffer_CCR1, Collected_Buffer_Repetition, DataCollected);
+	DataCollected = 0;
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
 
   /* USER CODE END TIM2_IRQn 1 */
-}
-
-/**
-  * @brief This function handles DMA2 stream1 global interrupt.
-  */
-void DMA2_Stream1_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA2_Stream1_IRQn 0 */
-	  Frequency = 0;
-	  IC_Val1=0;
-	  IC_Val2=0;
-	  for (int i = 0; i<HALF_BUFFER_SIZE;i++ ){
-
-		  IC_Val1=Buffer[2*i];
-		  IC_Val2=Buffer[2*i+1];
-		  if (IC_Val2 > IC_Val1){
-			  Frequency += (uint32_t)(IC_Val2-IC_Val1);
-		  }else{
-			  Frequency += (uint32_t)((0xffff - IC_Val1) + IC_Val2);
-		  }
-	  }
-	  /*Potentially add a new float variable in order to output the frequencies with fraction*/
-	  Frequency >>= 3;
-	  Frequency = (1000000/Frequency);
-	  //HAL_Delay(1);
-
-  /* USER CODE END DMA2_Stream1_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_tim1_ch1);
-  /* USER CODE BEGIN DMA2_Stream1_IRQn 1 */
-  //	  (&hdma_tim1_ch1)->StreamBaseAddress->IFCR = DMA_FLAG_TCIF0_4 << (&hdma_tim1_ch1)->StreamIndex;
-  //	  (&hdma_tim1_ch1)->Instance->NDTR = BUFFER_SIZE;
-  //	  (&hdma_tim1_ch1)->Instance->CR  |= DMA_IT_TC | DMA_IT_TE | DMA_IT_DME;
-  //	  __HAL_DMA_ENABLE(&hdma_tim1_ch1);
-  /* USER CODE END DMA2_Stream1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

@@ -63,8 +63,11 @@ void Error_Handler(void);
 #define TCK_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
-#define BUFFER_SIZE 16
-#define HALF_BUFFER_SIZE BUFFER_SIZE/2
+#define BUFFER_SIZE            9
+#define HALF_BUFFER_SIZE       BUFFER_SIZE/2
+#define PRESCALER              90
+#define PERIOD                 0x10000
+#define REPETITION_PERIOD      0x10000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

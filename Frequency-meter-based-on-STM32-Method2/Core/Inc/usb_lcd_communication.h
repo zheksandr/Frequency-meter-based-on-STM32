@@ -4,44 +4,39 @@
 #include "main.h"
 #include "liquidcrystal_i2c.h"
 
+#define ERR_MESSAGE_LENGTH   9
+#define RAW_LENGTH           16
 
-uint8_t  f_lenght = 0;
-uint32_t temp = 0;
 extern UART_HandleTypeDef huart4;
 void SendDataLCDUSB(uint32_t frequency){
-	  temp = frequency;
-	  f_lenght = 0;
+	  uint32_t temp = frequency;
+	  uint16_t  f_lenght    = 0;
+	  char send_buff[RAW_LENGTH]  ={'0'};
+	  if(frequency){
+		  sprintf(send_buff, "%d",(uint32_t)frequency);
+		  while (temp){
+			  temp /= 10;
+			  f_lenght++;
+		  }
+	  }else{
+		  sprintf(send_buff, "%s","NOT_READY");
+		  f_lenght = ERR_MESSAGE_LENGTH;
+	  }
 	  HD44780_Clear();
 	  HD44780_SetCursor(0,0);
-	  while (temp){
-		  temp /= 10;
-		  f_lenght++;
-	  }
-	  if (f_lenght){
-	  uint8_t Frequency_Buff[f_lenght];
-	  unsigned char send_Buff_UART[f_lenght+5];
 	  for (int i = 0; i < f_lenght; i++){
-		  Frequency_Buff[i] = frequency % 10 + 48;
-		  frequency /= 10;
+		  HD44780_PrintSpecialChar(send_buff[i]);
 	  }
-	  uint8_t start = 0;
-	  uint8_t end = f_lenght - 1;
-	  uint8_t temp;
-	  while (start < end) {
-	      temp = Frequency_Buff[start];
-	      Frequency_Buff[start] = Frequency_Buff[end];
-	      Frequency_Buff[end] = temp;
-          start++;
-          end--;
-      }
-	  memcpy(send_Buff_UART,Frequency_Buff,f_lenght);
-      memcpy(send_Buff_UART+f_lenght,"HZ\r\n",5);
-	  for (int i = 0; i < f_lenght; i++){
-		  HD44780_PrintSpecialChar(Frequency_Buff[i]);
+	  if(frequency){
+		  HD44780_PrintStr("HZ");
+	  	  memcpy(send_buff+f_lenght,"HZ\r\n",5);
+	  	  f_lenght+=5;
+	  }else{
+		  memcpy(send_buff+f_lenght,"\r\n",3);
+		  f_lenght+=3;
 	  }
-	  HD44780_PrintStr("HZ");
-	  HAL_UART_Transmit(&huart4, send_Buff_UART,(uint16_t) (f_lenght+5), HAL_MAX_DELAY);
-	  }
+	  HAL_UART_Transmit(&huart4, send_buff,f_lenght, HAL_MAX_DELAY);
+
 }
 
 #endif
