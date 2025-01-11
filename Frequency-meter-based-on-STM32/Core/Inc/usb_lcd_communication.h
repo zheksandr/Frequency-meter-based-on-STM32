@@ -14,10 +14,10 @@
 extern UART_HandleTypeDef huart4;
 void SendDataLCDUSB(uint16_t *Buffer_CCR, uint16_t *Buffer_RCR, uint8_t Flag){
 	uint16_t  f_lenght    = 0;
-	float frequency       = 0;
+	double frequency       = 0;
 	char send_buff[RAW_LENGTH]  ={'0'};
 	if(Flag){
-		uint32_t sum = 0;
+		double sum = 0;
 		for (int i = 0; i < BUFFER_SIZE-1; i++){
 			if ((Buffer_RCR[i]-Buffer_RCR[i+1])<0){
 				sum += (Buffer_RCR[i]+REPETITION_PERIOD-Buffer_RCR[i+1])*PERIOD+Buffer_CCR[i]-Buffer_CCR[i+1];
@@ -25,9 +25,8 @@ void SendDataLCDUSB(uint16_t *Buffer_CCR, uint16_t *Buffer_RCR, uint8_t Flag){
 				sum += (Buffer_RCR[i]-Buffer_RCR[i+1])*PERIOD+Buffer_CCR[i]-Buffer_CCR[i+1];
 			}
 		}
-		sum >>=3;
-		frequency = 180e6/(PRESCALER*sum);
-		if((uint32_t)frequency/10000){
+		frequency = (180e6*8)/(PRESCALER*sum);
+		if((uint32_t)frequency/FREQ_NO_DIGIT){
 			uint32_t   temp = 0;
 			f_lenght = 0;
 			temp = frequency;
@@ -36,13 +35,13 @@ void SendDataLCDUSB(uint16_t *Buffer_CCR, uint16_t *Buffer_RCR, uint8_t Flag){
 				f_lenght++;
 		    }
 			sprintf(send_buff, "%d",(uint32_t)frequency);
-		}else if ((uint32_t)frequency/1000){
+		}else if ((uint32_t)frequency/FREQ_ONE_DIGIT){
 			sprintf(send_buff, "%.1f",frequency);
 			f_lenght = 6;
-		}else if((uint32_t)frequency/100){
+		}else if((uint32_t)frequency/FREQ_TWO_DIGIT){
 			sprintf(send_buff, "%.2f",frequency);
 			f_lenght = 6;
-		}else if((uint32_t)frequency/10){
+		}else if((uint32_t)frequency/FREQ_THREE_DIGIT){
 			sprintf(send_buff, "%.3f",frequency);
 			f_lenght = 6;
 		}else{
@@ -67,8 +66,6 @@ void SendDataLCDUSB(uint16_t *Buffer_CCR, uint16_t *Buffer_RCR, uint8_t Flag){
 		  f_lenght+=3;
 	  }
 	  HAL_UART_Transmit(&huart4, send_buff,f_lenght, HAL_MAX_DELAY);
-	  Flag = 0;
-
 }
 
 #endif

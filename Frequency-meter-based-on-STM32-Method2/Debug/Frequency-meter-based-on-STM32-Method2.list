@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000cf5  00000000  00000000  0001b5f8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00022717  00000000  00000000  0001c2ed  2**0
+ 16 .debug_macro  00022729  00000000  00000000  0001c2ed  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00014988  00000000  00000000  0003ea04  2**0
+ 17 .debug_line   00014960  00000000  00000000  0003ea16  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000d3559  00000000  00000000  0005338c  2**0
+ 18 .debug_str    000d3582  00000000  00000000  00053376  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  001268e5  2**0
+ 19 .comment      00000043  00000000  00000000  001268f8  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00004ab4  00000000  00000000  00126928  2**2
+ 20 .debug_frame  00004ab4  00000000  00000000  0012693c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000008b  00000000  00000000  0012b3dc  2**0
+ 21 .debug_line_str 0000008b  00000000  00000000  0012b3f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1378,23 +1378,23 @@ static void MX_TIM1_Init(void)
   /* USER CODE BEGIN TIM1_Init 1 */
 
   /* USER CODE END TIM1_Init 1 */
-  htim1.Instance = TIM1;
+  htim1.Instance               = TIM1;
  8000b72:	4b3e      	ldr	r3, [pc, #248]	@ (8000c6c <MX_TIM1_Init+0x138>)
  8000b74:	4a3e      	ldr	r2, [pc, #248]	@ (8000c70 <MX_TIM1_Init+0x13c>)
  8000b76:	601a      	str	r2, [r3, #0]
-  htim1.Init.Prescaler = 18000-1;
+  htim1.Init.Prescaler         = PRESCALLER-1;
  8000b78:	4b3c      	ldr	r3, [pc, #240]	@ (8000c6c <MX_TIM1_Init+0x138>)
  8000b7a:	f244 624f 	movw	r2, #17999	@ 0x464f
  8000b7e:	605a      	str	r2, [r3, #4]
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.CounterMode       = TIM_COUNTERMODE_UP;
  8000b80:	4b3a      	ldr	r3, [pc, #232]	@ (8000c6c <MX_TIM1_Init+0x138>)
  8000b82:	2200      	movs	r2, #0
  8000b84:	609a      	str	r2, [r3, #8]
-  htim1.Init.Period = 10000-1;
+  htim1.Init.Period            = PERIOD+1;
  8000b86:	4b39      	ldr	r3, [pc, #228]	@ (8000c6c <MX_TIM1_Init+0x138>)
- 8000b88:	f242 720f 	movw	r2, #9999	@ 0x270f
+ 8000b88:	f242 7211 	movw	r2, #10001	@ 0x2711
  8000b8c:	60da      	str	r2, [r3, #12]
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
  8000b8e:	4b37      	ldr	r3, [pc, #220]	@ (8000c6c <MX_TIM1_Init+0x138>)
  8000b90:	2200      	movs	r2, #0
  8000b92:	611a      	str	r2, [r3, #16]
@@ -1444,7 +1444,7 @@ static void MX_TIM1_Init(void)
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
  8000bdc:	2320      	movs	r3, #32
  8000bde:	643b      	str	r3, [r7, #64]	@ 0x40
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  sMasterConfig.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
  8000be0:	2300      	movs	r3, #0
  8000be2:	647b      	str	r3, [r7, #68]	@ 0x44
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
@@ -1459,22 +1459,22 @@ static void MX_TIM1_Init(void)
     Error_Handler();
  8000bf6:	f000 f92b 	bl	8000e50 <Error_Handler>
   }
-  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  sConfigOC.OCMode       = TIM_OCMODE_TIMING;
  8000bfa:	2300      	movs	r3, #0
  8000bfc:	627b      	str	r3, [r7, #36]	@ 0x24
-  sConfigOC.Pulse = 10000-3;
- 8000bfe:	f242 730d 	movw	r3, #9997	@ 0x270d
+  sConfigOC.Pulse        = CCR1-1;
+ 8000bfe:	f242 730f 	movw	r3, #9999	@ 0x270f
  8000c02:	62bb      	str	r3, [r7, #40]	@ 0x28
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCPolarity   = TIM_OCPOLARITY_HIGH;
  8000c04:	2300      	movs	r3, #0
  8000c06:	62fb      	str	r3, [r7, #44]	@ 0x2c
-  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+  sConfigOC.OCNPolarity  = TIM_OCNPOLARITY_HIGH;
  8000c08:	2300      	movs	r3, #0
  8000c0a:	633b      	str	r3, [r7, #48]	@ 0x30
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCFastMode   = TIM_OCFAST_DISABLE;
  8000c0c:	2300      	movs	r3, #0
  8000c0e:	637b      	str	r3, [r7, #52]	@ 0x34
-  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCIdleState  = TIM_OCIDLESTATE_RESET;
  8000c10:	2300      	movs	r3, #0
  8000c12:	63bb      	str	r3, [r7, #56]	@ 0x38
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
@@ -1578,23 +1578,23 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 1 */
 
   /* USER CODE END TIM2_Init 1 */
-  htim2.Instance = TIM2;
+  htim2.Instance               = TIM2;
  8000ca0:	4b28      	ldr	r3, [pc, #160]	@ (8000d44 <MX_TIM2_Init+0xd0>)
  8000ca2:	f04f 4280 	mov.w	r2, #1073741824	@ 0x40000000
  8000ca6:	601a      	str	r2, [r3, #0]
-  htim2.Init.Prescaler = 0;
+  htim2.Init.Prescaler         = 0;
  8000ca8:	4b26      	ldr	r3, [pc, #152]	@ (8000d44 <MX_TIM2_Init+0xd0>)
  8000caa:	2200      	movs	r2, #0
  8000cac:	605a      	str	r2, [r3, #4]
-  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.CounterMode       = TIM_COUNTERMODE_UP;
  8000cae:	4b25      	ldr	r3, [pc, #148]	@ (8000d44 <MX_TIM2_Init+0xd0>)
  8000cb0:	2200      	movs	r2, #0
  8000cb2:	609a      	str	r2, [r3, #8]
-  htim2.Init.Period = 4294967295;
+  htim2.Init.Period            = 4294967295;
  8000cb4:	4b23      	ldr	r3, [pc, #140]	@ (8000d44 <MX_TIM2_Init+0xd0>)
  8000cb6:	f04f 32ff 	mov.w	r2, #4294967295
  8000cba:	60da      	str	r2, [r3, #12]
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
  8000cbc:	4b21      	ldr	r3, [pc, #132]	@ (8000d44 <MX_TIM2_Init+0xd0>)
  8000cbe:	2200      	movs	r2, #0
  8000cc0:	611a      	str	r2, [r3, #16]
@@ -1612,16 +1612,16 @@ static void MX_TIM2_Init(void)
     Error_Handler();
  8000cd4:	f000 f8bc 	bl	8000e50 <Error_Handler>
   }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_ETRMODE2;
+  sClockSourceConfig.ClockSource    = TIM_CLOCKSOURCE_ETRMODE2;
  8000cd8:	f44f 5300 	mov.w	r3, #8192	@ 0x2000
  8000cdc:	623b      	str	r3, [r7, #32]
-  sClockSourceConfig.ClockPolarity = TIM_CLOCKPOLARITY_NONINVERTED;
+  sClockSourceConfig.ClockPolarity  = TIM_CLOCKPOLARITY_NONINVERTED;
  8000cde:	2300      	movs	r3, #0
  8000ce0:	627b      	str	r3, [r7, #36]	@ 0x24
   sClockSourceConfig.ClockPrescaler = TIM_CLOCKPRESCALER_DIV1;
  8000ce2:	2300      	movs	r3, #0
  8000ce4:	62bb      	str	r3, [r7, #40]	@ 0x28
-  sClockSourceConfig.ClockFilter = 0;
+  sClockSourceConfig.ClockFilter    = 0;
  8000ce6:	2300      	movs	r3, #0
  8000ce8:	62fb      	str	r3, [r7, #44]	@ 0x2c
   if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)

@@ -213,7 +213,7 @@ void TIM1_CC_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_CC_IRQn 0 */
   index--;
-  Buffer_CCR1[index]= htim1.Instance->CCR1;
+  Buffer_CCR1[index]       = htim1.Instance->CCR1;
   Buffer_Repetition[index] = htim3.Instance->CNT;
   if(!index){
 	  index = BUFFER_SIZE;
@@ -223,7 +223,6 @@ void TIM1_CC_IRQHandler(void)
 	  }
 	  for (int i = 0; i < BUFFER_SIZE; i++) {
 		  Collected_Buffer_Repetition[i] = Buffer_Repetition[i];
-
 	  }
   }
   /* USER CODE END TIM1_CC_IRQn 0 */

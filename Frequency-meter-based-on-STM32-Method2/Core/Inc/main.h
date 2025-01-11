@@ -67,7 +67,9 @@ void Error_Handler(void);
 #define SWO_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+#define PRESCALLER   18000
+#define PERIOD       10000
+#define CCR1         10000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

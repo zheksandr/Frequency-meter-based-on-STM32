@@ -64,7 +64,6 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 #define BUFFER_SIZE            9
-#define HALF_BUFFER_SIZE       BUFFER_SIZE/2
 #define PRESCALER              90
 #define PERIOD                 0x10000
 #define REPETITION_PERIOD      0x10000
